@@ -21,7 +21,7 @@ public class ExpensifyController {
         this.expensifyService = expensifyService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String getAllExpenses(Model model) {
         List<Expensify> expensifyList = expensifyService.getAllExpenses();
         model.addAttribute("totalAmount", expensifyRepo.totalTest());
