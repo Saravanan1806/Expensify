@@ -46,7 +46,7 @@ public class ExpensifyController {
     @PostMapping("/saveExpense")
     public String saveExpense(@ModelAttribute("expense") Expensify expensify, Model model) {
         expensifyService.saveExpense(expensify);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @PostMapping("/updateExpense/{id}")
@@ -56,13 +56,13 @@ public class ExpensifyController {
         expensify1.setDescription(expensify.getDescription());
         expensify1.setAmount(expensify.getAmount());
         expensifyService.saveExpense(expensify1);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @GetMapping("/deleteExpense/{id}")
     public String deleteExpense(@PathVariable("id") long id, Model model) {
         expensifyService.delExpense(id);
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 }
